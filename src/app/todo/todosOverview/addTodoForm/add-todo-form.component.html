@@ -1,0 +1,7 @@
+<div class="">
+    <mat-form-field class="d-block" color="accent">
+        <mat-label>Add a new To-Do</mat-label>
+        <textarea matInput cdkTextareaAutosize [(ngModel)]="newTodoText"></textarea>
+    </mat-form-field>     
+    <button mat-icon-button matTooltip="Add To-Do" (click)="createTodo()" class="float-end btn p-0 button-hover"><mat-icon>note_add</mat-icon></button>
+</div>

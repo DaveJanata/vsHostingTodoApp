@@ -1,0 +1,12 @@
+<div class="card my-2">
+    <mat-list-item style="height: 20%;">
+        <button matListItemAvatar matTooltip="Edit Todo" style="width: 30px; height: 30px;" (click)="editingText ? stopEditingText() : editText()" class="btn button-hover ms-0 mx-1 px-0 py-0 my-auto" ><mat-icon [ngClass]="{'icon-display': !editingText}" fontIcon="edit"></mat-icon></button>
+        <button matListItemAvatar matTooltip="Delete Todo" style="width: 30px; height: 30px;" (click)="removeTodo()" class="btn button-hover px-0 mx-0 py-0"><mat-icon class="icon-display" fontIcon="delete"></mat-icon></button>
+        <button *ngIf="!doneTodos" matListItemMeta matTooltip="Mark as done" (click)="changeStatus()" class="btn button-hover py-0 my-0 me-0"><mat-icon>done</mat-icon></button>
+        <mat-icon *ngIf="doneTodos" class="float-end me-1" [color]="doneTodos ? 'accent' : ''">done</mat-icon>
+    </mat-list-item>
+    <hr class="my-0">
+    <div class="input-group">
+        <textarea matListItemTitle cdkTextareaAutosize type="text" (blur)="stopEditingText()" [readOnly]="!editingText" style="white-space: pre-wrap; box-sizing: content-box;" class="form-control m-2" [(ngModel)]="todoText"></textarea>
+    </div>
+</div>

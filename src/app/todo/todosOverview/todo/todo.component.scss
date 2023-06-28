@@ -1,0 +1,32 @@
+.icon-display {
+    transform: scale(0.7);
+    visibility: hidden;
+}
+
+.card:hover .icon-display {
+    visibility: visible;
+}
+
+mat-list-item {
+    padding: 0;
+    background-color: rgba(33, 37, 41, 0.03)
+}
+
+.form-control{
+    border-color: rgba(255, 64, 129, 0.2);
+    box-shadow: 0 0 0.1rem 0.1rem rgba(255, 64, 129, 0.2);
+}
+.form-control[readonly]{
+    border-color: rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 0 white;
+    resize: none;
+}
+
+.form-control:focus{
+    box-shadow: 0 0 0.1rem 0.1rem rgba(255, 64, 129);
+}
+.form-control[readonly]:focus{
+    border-color: rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 0 white;
+}
+

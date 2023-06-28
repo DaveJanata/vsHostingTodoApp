@@ -1,0 +1,38 @@
+<div class="container" style="height: 100vh;">
+    <div class="row">
+        <div class="col">
+            <div class="card" style="min-height: 100%;">
+                <div class="card-header text-center">
+                    Pending To-Dos
+                </div> 
+                <p class="position-absolute todo-count">{{pendingTodos.length}}</p>
+                <button mat-icon-button matTooltip="Mark all To-Dos as Done" (click)="markAllDone()" class="btn markAll button-hover position-absolute"><mat-icon>done</mat-icon></button>
+                <div class="card-body">
+                    <mat-list>
+                        <vs-hosting-todo (markAsDone)="markTodoDone($event)" (editTodo)="editTodo($event)" (deleteTodo)="deleteTodo($event)" *ngFor="let todo of pendingTodos" [todo]="todo"></vs-hosting-todo>
+                    </mat-list>
+                </div>
+            </div>
+        </div>
+        <div class="col mt-3">
+            <div class="card position-fixed">
+                <div class="card-body text-center d-flex flex-column align-center">
+                    <vs-hosting-todo-add-todo-form (newTodo)="createTodo($event)"></vs-hosting-todo-add-todo-form>                  
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="min-height: 100%;">
+                <div class="card-header text-center">
+                    Done To-Dos
+                </div> 
+                <p class="position-absolute todo-count">{{doneTodos.length}}</p>
+                <div class="card-body">
+                    <mat-list>
+                        <vs-hosting-todo (editTodo)="editTodo($event)" (deleteTodo)="deleteTodo($event)" *ngFor="let todo of doneTodos" [doneTodos]="true" [todo]="todo"></vs-hosting-todo>
+                    </mat-list>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
