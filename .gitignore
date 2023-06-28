@@ -12,6 +12,8 @@ node_modules
 /.idea
 .project
 .classpath
+.firebase
+.vscode
 .c9/
 *.launch
 .settings/
